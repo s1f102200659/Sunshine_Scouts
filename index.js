@@ -6,7 +6,7 @@ function searchWeatherByCity(city) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      const weather_rough = data.weather[0].main
+      const weather_rough = data.weather[0].main;
       const weather = data.weather[0].description;
       const weatherElement = document.getElementById('currentWeather');
       let weatherIcon = '';
