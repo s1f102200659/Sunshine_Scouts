@@ -11,26 +11,23 @@ function searchWeatherByCity(city) {
       const weatherElement = document.getElementById('currentWeather');
       let weatherIcon = '';
 
-switch (weather) {
-  case '晴天':
+switch (weather_rough) {
+  case 'Clear':
     weatherIcon = 'sun_1763.png'; 
     break;
-  case '薄い雲':
+  case 'Clouds':
     weatherIcon = 'cloudy-icon.png'; 
     break;
-  case '厚い雲':
-    weatherIcon = 'cloudy-icon.png'; 
+  case 'Drizzle':
+    weatherIcon = 'rainy-icon.png';
     break;
-  case '雨':
+  case 'Rain':
     weatherIcon = 'rainy-icon.png'; 
     break;
-  case '小雨':
+  case 'Thunderstorm':
     weatherIcon = 'rainy-icon.png'; 
     break;
-  case '雪':
-    weatherIcon = 'snowman.png'; 
-    break;
-  case '小雪':
+  case 'Snow':
     weatherIcon = 'snowman.png'; 
     break;
 }
