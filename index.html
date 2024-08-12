@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather App</title>
+   <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+   <style>
+    #map {
+      height: 400px; 
+    }
+  </style>
+</head>
+<body>
+  <div style="background-color: rgb(255, 241, 243);">
+    <div style="margin-left: 5%;">
+    <div style="margin-right: 5%;">
+    <h1 style="text-align: center; background-color: rgb(201, 249, 249); color: rgb(251, 137, 137); font-family: Hannari;"><img src="sun_1763.png" width="70px" height="70px">サンシャインスカウツ<img src="rainy-icon.png" width="70px" height="70px"></h1>
+    
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="市区町村名を入力してね！" id="cityName">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="searchWeather">検索</button>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-2">
+        <h4><div id="current"></div></h4>
+        <div id="currentWeather"></div>
+        <div id="currenttemperture"></div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h2 style="color: rgb(255, 154, 66);"><img src="full_moon_star_1906.png" height="50px" width="50px">調べたい場所をクリックしてね！</h2>
+            <div id="map"></div>
+        </div>
+        <div class="col-6">
+            <h2 style="color: rgb(0, 221, 255);"><img src="snowman.png" height="50px" width="50px">天気予測クイズ</h2>
+            <p><img src="cloudy-icon.png" height="30px" width="30px">天気を当てて、温度の誤差が2℃以内ならクリア!!</p>
+            <div id="weatherQuiz">
+            <div class="form-group">
+                <label for="predictedWeather" style="margin-left: 30px;">明日の天気を予想してね！:</label>
+                <select class="form-control" id="predictedWeather">
+                <option value="Clear">晴れ</option>
+                <option value="Clouds">くもり</option>
+                <option value="Rain">雨</option>
+                <option value="Snow">雪</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="predictedTemp"><img src="rain.png" height="30px" width="30px">明日の最高気温を予想してね！ (°C):</label>
+                <input type="number" class="form-control" id="predictedTemp" step="0.1">
+            </div>
+            <div style="margin-bottom: 5%;">
+            <button id="submitPrediction" class="btn btn-primary">予想を送信</button>
+            </div>
+            <h5><div id="quizResult"></div></h5>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="index.js"></script> 
+</body>
+</html>
